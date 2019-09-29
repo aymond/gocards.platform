@@ -11,8 +11,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
 
 	if err != nil {
-		generateHTML(w, "", "home", "header.private", "footer")
+		// No login session, so display the public header
+		generateHTML(w, "", "home", "header.public", "footer")
 	} else {
+		// Active login session, so display the private header
 		generateHTML(w, "", "home", "header.private", "footer")
 	}
 }
