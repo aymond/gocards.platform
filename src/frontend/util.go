@@ -33,7 +33,7 @@ func generateHTML(w http.ResponseWriter, data interface{}, fn ...string) {
 // pass in a list of file names, and get a template
 func parseTemplateFiles(filenames ...string) (t *template.Template) {
 	var files []string
-	t = template.New("layout")
+	t = template.New("login")
 	for _, file := range filenames {
 		files = append(files, fmt.Sprintf("templates/%s.html", file))
 	}

@@ -1,5 +1,5 @@
 {{ define "login" }}
-
+{{ template "header" . }}
 <form class="" role="form" action="/authenticate" method="post">
   <h2 class="">
     <i class="">
@@ -13,5 +13,5 @@
   <br/>
   <a class="" href="/signup">Sign up</a>
 </form>
-
+{{ template "footer" . }}
 {{ end }}
