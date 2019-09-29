@@ -1,0 +1,17 @@
+{{ define "login" }}
+
+<form class="" role="form" action="/authenticate" method="post">
+  <h2 class="">
+    <i class="">
+      Game Login 
+    </i>
+  </h2>
+  <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+  <input type="password" name="password" class="form-control" placeholder="Password" required>
+  <br/>
+  <button class="" type="submit">Sign in</button>
+  <br/>
+  <a class="" href="/signup">Sign up</a>
+</form>
+
+{{ end }}
