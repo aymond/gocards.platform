@@ -23,6 +23,7 @@ func main() {
 	r.HandleFunc("/signup", signup)
 	r.HandleFunc("/authenticate", authenticationHandler)
 	r.HandleFunc("/newsignup", newSignup)
+	r.HandleFunc("/profile", profile)
 
 	// Other handlers for experimenting.
 	r.HandleFunc("/name/{name}", nameHandler)

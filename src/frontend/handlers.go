@@ -54,3 +54,8 @@ func logoutHandler(w http.ResponseWriter, r *http.Request) {
 func signupHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v\n", "<h1>Sign Up</h1>")
 }
+
+// Profile comment
+func profile(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "%v\n", "<h1>Profile</h1>")
+}
