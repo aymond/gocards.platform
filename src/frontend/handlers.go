@@ -9,14 +9,15 @@ import (
 // HomeHandler comment
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
+	header := "header.public"
 
 	if err != nil {
 		// No login session, so display the public header
-		generateHTML(w, "", "home", "header.public", "footer")
 	} else {
 		// Active login session, so display the private header
-		generateHTML(w, "", "home", "header.private", "footer")
+		header = "header.private"
 	}
+	generateHTML(w, "", "home", header, "footer")
 }
 
 // NameHandler comment
