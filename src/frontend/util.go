@@ -50,3 +50,8 @@ func logerror(args ...interface{}) {
 	logger.SetPrefix("ERROR ")
 	logger.Println(args...)
 }
+
+// Convenience function for printing to stdout
+func p(a ...interface{}) {
+	fmt.Println(a...)
+}

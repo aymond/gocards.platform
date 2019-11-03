@@ -11,7 +11,13 @@ const (
 	cookieSessionsID = cookiePrefix + "session-id"
 )
 
+// version
+func version() string {
+	return "0.0.1"
+}
+
 func main() {
+	p("gocards", version(), "started.")
 	//r := mux.NewRouter()
 	r := http.NewServeMux()
 	r.HandleFunc("/", homeHandler)
