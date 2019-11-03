@@ -41,3 +41,29 @@ func login(writer http.ResponseWriter, request *http.Request) {
 	t := parseTemplateFiles("footer", "header.public", "login")
 	t.Execute(writer, nil)
 }
+
+// GET /signup
+// Show the signup page
+func signup(writer http.ResponseWriter, request *http.Request) {
+	t := parseTemplateFiles("footer", "header.public", "signup")
+	t.Execute(writer, nil)
+	//generateHTML(writer, nil, "footer", "header.public", "")
+}
+
+// POST /signup
+// newSignup Create the user account
+func newSignup(writer http.ResponseWriter, request *http.Request) {
+	err := request.ParseForm()
+	if err != nil {
+		logerror(err, "Cannot parse form")
+	}
+	user := data.User{
+		Name:     request.PostFormValue("name"),
+		Email:    request.PostFormValue("email"),
+		Password: request.PostFormValue("password"),
+	}
+	if err := user.Create(); err != nil {
+		logerror(err, "Cannot create user")
+	}
+	http.Redirect(writer, request, "/login", 302)
+}

@@ -1,7 +1,7 @@
-{{ define "login" }}
+{{ define "template" }}
 {{ template "header" . }}
-<form class="" role="form" action="/authenticate" method="post">
-  <h2 class="">
+<form class="form-signin center" role="form" action="/authenticate" method="post">
+  <h2 class="form-signin-heading">
     <i class="">
       Game Login 
     </i>
@@ -9,7 +9,7 @@
   <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
   <input type="password" name="password" class="form-control" placeholder="Password" required>
   <br/>
-  <button class="" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <br/>
   <a class="" href="/signup">Sign up</a>
 </form>

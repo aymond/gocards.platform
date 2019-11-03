@@ -52,5 +52,5 @@ func logoutHandler(w http.ResponseWriter, r *http.Request) {
 
 // SignupHandler comment
 func signupHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "%v\n", "<h1>Game List!</h1>")
+	fmt.Fprintf(w, "%v\n", "<h1>Sign Up</h1>")
 }

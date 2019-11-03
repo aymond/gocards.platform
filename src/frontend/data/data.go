@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 
+	// Need to pass a driver name as the first argument of the sql.Open() function
 	_ "github.com/lib/pq"
 )
 
@@ -15,7 +16,7 @@ var Db *sql.DB
 
 func init() {
 	var err error
-	Db, err = sql.Open("postgres", "dbname=game sslmode=disable")
+	Db, err = sql.Open("postgres", "user=cardgame password=cardgame123 dbname=game sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}

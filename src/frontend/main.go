@@ -20,8 +20,9 @@ func main() {
 	// User Handlers
 	r.HandleFunc("/login", login)
 	r.HandleFunc("/logout", logoutHandler)
-	r.HandleFunc("/signup", signupHandler)
+	r.HandleFunc("/signup", signup)
 	r.HandleFunc("/authenticate", authenticationHandler)
+	r.HandleFunc("/newsignup", newSignup)
 
 	// Other handlers for experimenting.
 	r.HandleFunc("/name/{name}", nameHandler)

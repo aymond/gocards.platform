@@ -4,10 +4,14 @@ import (
 	"errors"
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 
 	"./data"
 )
+
+// Setup logger
+var logger *log.Logger
 
 func session(w http.ResponseWriter, r *http.Request) (sess data.Session, err error) {
 	cookie, err := r.Cookie("_cookie")
@@ -33,10 +37,16 @@ func generateHTML(w http.ResponseWriter, data interface{}, fn ...string) {
 // pass in a list of file names, and get a template
 func parseTemplateFiles(filenames ...string) (t *template.Template) {
 	var files []string
-	t = template.New("login")
+	t = template.New("template")
 	for _, file := range filenames {
 		files = append(files, fmt.Sprintf("templates/%s.html", file))
 	}
 	t = template.Must(t.ParseFiles(files...))
 	return
+}
+
+// error logs an error message
+func logerror(args ...interface{}) {
+	logger.SetPrefix("ERROR ")
+	logger.Println(args...)
 }
